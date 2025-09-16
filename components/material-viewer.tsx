@@ -8,8 +8,6 @@ import { ArrowLeft, Clock, BookOpen, ExternalLink, Bookmark } from "lucide-react
 import Link from "next/link"
 import type { StudyMaterial } from "@/lib/study-materials"
 import ReactMarkdown from "react-markdown"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism"
 
 interface MaterialViewerProps {
   material: StudyMaterial
@@ -110,22 +108,7 @@ export function MaterialViewer({ material }: MaterialViewerProps) {
             <Separator />
             <CardContent className="pt-6">
               <div className="prose prose-sm max-w-none">
-                <ReactMarkdown
-                  components={{
-                    code({ node, inline, className, children, ...props }) {
-                      const match = /language-(\w+)/.exec(className || "")
-                      return !inline && match ? (
-                        <SyntaxHighlighter style={tomorrow} language={match[1]} PreTag="div" {...props}>
-                          {String(children).replace(/\n$/, "")}
-                        </SyntaxHighlighter>
-                      ) : (
-                        <code className={className} {...props}>
-                          {children}
-                        </code>
-                      )
-                    },
-                  }}
-                >
+                <ReactMarkdown>
                   {material.content}
                 </ReactMarkdown>
               </div>

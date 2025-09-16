@@ -50,8 +50,7 @@ export function ProgressCalendar() {
             isStudyDay: true,
             isCompleted: dayData?.completedAt ? true : false,
             isActive: dayData && !dayData.completedAt && week === getCurrentWeek(),
-            timeSpent: dayData?.timeSpent || 0,
-            sessionsCompleted: dayData?.sessionsCompleted || 0,
+            timeSpent: dayData?.totalTimeSpent || 0,
             totalSessions: 3, // Morning, afternoon, evening
           })
         } else {

@@ -26,7 +26,7 @@ export default function DayPage({ params }: DayPageProps) {
   const breadcrumbItems = [
     { label: "Study Plan", href: "/" },
     { label: `Week ${weekNumber}`, href: `/week/${weekNumber}` },
-    { label: `Day ${dayNumber}: ${day.title}` },
+    { label: `Day ${dayNumber}: ${day?.day}` },
   ]
 
   return (

@@ -21,7 +21,7 @@ export default function WeekPage({ params }: WeekPageProps) {
     notFound()
   }
 
-  const breadcrumbItems = [{ label: "Study Plan", href: "/" }, { label: `Week ${weekNumber}: ${week.title}` }]
+  const breadcrumbItems = [{ label: "Study Plan", href: "/" }, { label: `Week ${weekNumber}` }]
 
   return (
     <div className="min-h-screen bg-background">
